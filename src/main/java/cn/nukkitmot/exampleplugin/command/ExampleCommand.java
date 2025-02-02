@@ -1,4 +1,4 @@
-package cn.nukkitmot.exampleplugin;
+package cn.nukkitmot.exampleplugin.command;
 
 import cn.nukkit.Player;
 import cn.nukkit.Server;
@@ -13,11 +13,12 @@ import cn.nukkit.lang.LangCode;
 import cn.nukkit.lang.PluginI18n;
 import cn.nukkit.utils.Identifier;
 import cn.nukkit.utils.TextFormat;
+import cn.nukkitmot.exampleplugin.ExamplePlugin;
 
 public class ExampleCommand extends PluginCommand<ExamplePlugin> {
 
-    protected ExamplePlugin api;
-    protected PluginI18n i18n;
+    protected ExamplePlugin api = ExamplePlugin.getInstance();
+    protected PluginI18n i18n = ExamplePlugin.getI18n();
 
     public ExampleCommand() {
         /*
@@ -52,8 +53,6 @@ public class ExampleCommand extends PluginCommand<ExamplePlugin> {
                 CommandParameter.newType("player", false, CommandParamType.TARGET),
                 CommandParameter.newType("message", true, CommandParamType.STRING)
         });
-        api = ExamplePlugin.getInstance();
-        i18n = ExamplePlugin.getI18n();
     }
 
     /**

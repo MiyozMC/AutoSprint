@@ -12,6 +12,8 @@ import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
 import cn.nukkit.utils.ConfigSection;
 import cn.nukkit.utils.TextFormat;
+import cn.nukkitmot.exampleplugin.command.ExampleCommand;
+import cn.nukkitmot.exampleplugin.config.ExampleConfig;
 import cn.nukkitmot.exampleplugin.custom.enchantment.AutoRemeltedEnchatment;
 import cn.nukkitmot.exampleplugin.custom.entity.MarkerEntity;
 import cn.nukkitmot.exampleplugin.custom.item.CandyCaneSword;
@@ -32,6 +34,8 @@ public class ExamplePlugin extends PluginBase {
     public static PluginI18n i18n;
     @Getter
     public static LangCode serverLangCode;
+    @Getter
+    public static ExampleConfig EXAMPLE_CONFIG;
 
 
     @Override
@@ -71,22 +75,12 @@ public class ExamplePlugin extends PluginBase {
         this.saveResource("string.txt");
 
         //Config reading and writing
-        Config config = new Config(
-                new File(this.getDataFolder(), "config.yml"),
-                Config.YAML,
-                //Default values (not necessary)
-                new ConfigSection(new LinkedHashMap<>() {
-                    {
-                        put("this-is-a-key", "Hello! Config!");
-                        put("another-key", true); //you can also put other standard objects!
-                    }
-                }));
+        EXAMPLE_CONFIG = new ExampleConfig();
+        getLogger().info(EXAMPLE_CONFIG.getAKey());
 
-        //Now try to get the value, the default value will be given if the key isn't exist!
-        this.getLogger().info(String.valueOf(config.get("this-is-a-key", "this-is-default-value")));
+        EXAMPLE_CONFIG.getObjectKey().setSubKey1("this a new random number "+Math.random()).save();
+        getLogger().info(EXAMPLE_CONFIG.getObjectKey().getSubKey1());
 
-        //Don't forget to save it!
-        config.save();
     }
 
     @Override
