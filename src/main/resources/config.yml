@@ -1,10 +1,9 @@
-this-is-a-key: Hello! Config!
-another-key: true
-object-key:
-  enabled: false
-  subKey1: nukkit
-  subKey2: 2023
-array-key:
-  - first element
-  - second element
-  - third element
+name: AutoSprint
+main: AutoSprintPlugin
+version: 1.0.0
+load: POSTWORLD
+author: MiyozMC
+api: ["1.0.0"]
+
+description: A simple AutoSprint Plugin for nukkit
+website: miyozmc.pages.dev

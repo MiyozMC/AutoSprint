@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- Don't use the Nukkit-MOT namespace for your own plugins -->
-    <groupId>cn.nukkitmot</groupId>
-    <artifactId>example-plugin</artifactId>
+    <groupId>com.miyozmc</groupId>
+    <artifactId>AutoSprint</artifactId>
     <version>1.0.0</version>
-    <name>ExamplePlugin</name>
-    <description>An Example Nukkit-MOT Plugin</description>
-    <url>https://github.com/MemoriesOfTime/ExamplePlugin-Maven/</url>
+    <name>AutoSprint</name>
+    <description>A simple AutoSprint Plugin for nukkit</description>
+    <url>https://github.com/MiyozMC/AutoSprint/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
