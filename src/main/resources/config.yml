@@ -1,9 +1,4 @@
-name: AutoSprint
-main: AutoSprintPlugin
-version: 1.0.0
-load: POSTWORLD
-author: MiyozMC
-api: ["1.0.0"]
-
-description: A simple AutoSprint Plugin for nukkit
-website: miyozmc.pages.dev
+# 禁用自动疾跑的世界
+BlackListWorld: []
+# 允许自动疾跑的世界（优先于黑名单）
+WhiteListWorld: []

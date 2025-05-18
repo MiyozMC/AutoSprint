@@ -14,17 +14,18 @@ public class AutoSprint extends PluginBase {
 
     @Override
     public void onEnable() {
-        getLogger().info("AutoSprintPlugin 已启用!");
-    }
-
-    @Override
-    public void onLoad() {
         this.configManager = new ConfigManager(this);
         this.sprintManager = new SprintManager();
         this.getServer().getCommandMap().register("autosprint", new Sprint(this));
         this.getServer().getPluginManager().registerEvents(new MoveListener(this), this);
         int PluginId = 25897;
         MetricsLite metrics = new MetricsLite(this, PluginId);
+        getLogger().info("AutoSprint 已启用!感谢使用吖~");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("AutoSprint 已卸载!");
     }
 
     public ConfigManager getConfigManager() {
